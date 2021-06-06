@@ -1,0 +1,14 @@
+version: '3'
+
+networks: 
+  blazor_network:
+    driver: bridge
+
+services:
+  server-dev:
+    container_name: 'blazor-messaging'
+    build: .
+    ports:
+      - '8440:80'
+    networks:
+      - blazor_network
